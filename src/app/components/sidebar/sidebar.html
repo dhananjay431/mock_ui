@@ -1,14 +1,27 @@
 <aside class="sidebar">
   <div class="logo">
     <div class="logo-mark">A</div>
-    <div>
+    <div class="logo-copy">
       <div class="logo-text">Agentic</div>
       <div class="logo-sub">Expense Manager</div>
     </div>
+    <button
+      type="button"
+      class="sidebar-toggle"
+      (click)="toggleSidebar.emit()"
+      [attr.aria-label]="collapsed ? 'Show sidebar' : 'Hide sidebar'"
+      [attr.title]="collapsed ? 'Show sidebar' : 'Hide sidebar'"
+    >
+      @if (collapsed) {
+        <i class="ti ti-chevrons-right"></i>
+      } @else {
+        <i class="ti ti-chevrons-left"></i>
+      }
+    </button>
   </div>
   <nav class="nav">
     <a class="nav-item" id="nav-dashboard" routerLink="/dashboard" routerLinkActive="active">
-      <i class="ti ti-layout-dashboard"></i>Dashboard
+      <i class="ti ti-layout-dashboard"></i><span class="nav-label">Dashboard</span>
     </a>
     <a
       class="nav-item nav-expenses"
@@ -16,37 +29,38 @@
       routerLink="/expenses"
       routerLinkActive="active"
     >
-      <i class="ti ti-receipt"></i>Expenses
+      <i class="ti ti-receipt"></i><span class="nav-label">Expenses</span>
     </a>
     <a class="nav-item" id="nav-receipts" routerLink="/receipts" routerLinkActive="active">
-      <i class="ti ti-file-text"></i>Receipts
+      <i class="ti ti-file-text"></i><span class="nav-label">Receipts</span>
     </a>
     <a class="nav-item" id="nav-approvals" routerLink="/approvals" routerLinkActive="active">
-      <i class="ti ti-checks"></i>Approvals <span class="nav-badge">12</span>
+      <i class="ti ti-clipboard-check"></i><span class="nav-label">Approvals</span>
+      <span class="nav-badge">12</span>
     </a>
     <a class="nav-item" id="nav-reports" routerLink="/reports" routerLinkActive="active">
-      <i class="ti ti-chart-bar"></i>Reports
+      <i class="ti ti-chart-bar"></i><span class="nav-label">Reports</span>
     </a>
     <a class="nav-item" id="nav-budgets" routerLink="/budgets" routerLinkActive="active">
-      <i class="ti ti-wallet"></i>Budgets
+      <i class="ti ti-wallet"></i><span class="nav-label">Budgets</span>
     </a>
     <div class="nav-section">Admin</div>
     <a class="nav-item" id="nav-policies" routerLink="/policies" routerLinkActive="active">
-      <i class="ti ti-shield"></i>Policies
+      <i class="ti ti-shield"></i><span class="nav-label">Policies</span>
     </a>
     <a class="nav-item" id="nav-vendors" routerLink="/vendors" routerLinkActive="active">
-      <i class="ti ti-building"></i>Vendors
+      <i class="ti ti-building"></i><span class="nav-label">Vendors</span>
     </a>
     <a class="nav-item" id="nav-analytics" routerLink="/analytics" routerLinkActive="active">
-      <i class="ti ti-chart-pie"></i>Analytics
+      <i class="ti ti-chart-pie"></i><span class="nav-label">Analytics</span>
     </a>
     <a class="nav-item" id="nav-settings" routerLink="/settings" routerLinkActive="active">
-      <i class="ti ti-settings"></i>Settings
+      <i class="ti ti-settings"></i><span class="nav-label">Settings</span>
     </a>
   </nav>
   <div class="sidebar-footer">
     <div class="user-av">PS</div>
-    <div>
+    <div class="user-copy">
       <div class="user-name">Priya Sharma</div>
       <div class="user-role">Finance Team</div>
     </div>

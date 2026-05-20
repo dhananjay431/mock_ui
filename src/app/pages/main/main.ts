@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Sidebar } from '../../components/sidebar/sidebar';
 import { Topbar } from '../..//components/topbar/topbar';
@@ -8,4 +8,10 @@ import { Topbar } from '../..//components/topbar/topbar';
   templateUrl: './main.html',
   styleUrl: './main.scss',
 })
-export class Main {}
+export class Main {
+  protected readonly sidebarCollapsed = signal(false);
+
+  toggleSidebar(): void {
+    this.sidebarCollapsed.update((collapsed) => !collapsed);
+  }
+}

@@ -1,5 +1,5 @@
-<div class="app">
-  <app-sidebar> </app-sidebar>
+<div class="app" [class.sidebar-collapsed]="sidebarCollapsed()">
+  <app-sidebar [collapsed]="sidebarCollapsed()" (toggleSidebar)="toggleSidebar()"> </app-sidebar>
   <div class="main">
     <app-topbar> </app-topbar>
     <div class="content">
