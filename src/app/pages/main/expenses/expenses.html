@@ -5,14 +5,14 @@
       <div class="page-title">Multiple Expenses in Single Transaction</div>
       <div class="page-sub">Travel — Multiple Days Expense Reimbursement</div>
     </div>
-    <button class="btn" onclick="showToast('Expense sent back to employee', 'info')">
+    <button class="btn" (click)="showToast('Expense sent back to employee', 'info')">
       Send Back
     </button>
-    <button class="btn" onclick="showToast('Info request sent to Rahul Mehta', 'info')">
+    <button class="btn" (click)="showToast('Info request sent to Rahul Mehta', 'info')">
       Request Info
     </button>
-    <button class="btn danger" onclick="openModal('modal-reject')">Reject</button>
-    <button class="btn primary" onclick="openModal('modal-approve')">Approve</button>
+    <button class="btn danger" (click)="openModal('modal-reject')">Reject</button>
+    <button class="btn primary" (click)="openModal('modal-approve')">Approve</button>
   </div>
 
   <!-- Meta Bar -->
@@ -1319,7 +1319,7 @@
         <button
           class="btn primary"
           style="margin-top: 4px"
-          onclick="showToast('Notification settings saved', 'success')"
+          (click)="showToast('Notification settings saved', 'success')"
         >
           Save Changes
         </button>
@@ -1391,6 +1391,101 @@
           </button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Approve confirm -->
+
+<div class="modal-overlay" id="modal-approve">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">Confirm Approval</div>
+      <span class="modal-close" (click)="closeModal('modal-approve')"><i class="ti ti-x"></i></span>
+    </div>
+    <div class="modal-body">
+      <p style="font-size: 13px; color: var(--text2); line-height: 1.6">
+        You are about to approve
+        <strong style="color: var(--text1)">EXP-BAT-2024-0515-001</strong> for
+        <strong style="color: var(--text1)">₹18,742.60</strong> submitted by
+        <strong style="color: var(--text1)">Rahul Mehta</strong>. This will initiate reimbursement
+        via Bank Transfer.
+      </p>
+      <div
+        style="
+          margin-top: 12px;
+          background: var(--success-dim);
+          border: 1px solid rgba(16, 185, 129, 0.2);
+          border-radius: var(--radius);
+          padding: 10px 12px;
+        "
+      >
+        <div
+          style="
+            font-size: 11.5px;
+            color: var(--success);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+          "
+        >
+          <i class="ti ti-shield-check"></i> All 6 policy checks passed · Low risk · AI confidence
+          95%
+        </div>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" (click)="closeModal('modal-approve')">Cancel</button>
+      <button
+        class="btn primary"
+        (click)="
+          closeModal('modal-approve');
+          showToast('Expense approved &amp; sent for processing', 'success')
+        "
+      >
+        Confirm Approval
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Reject -->
+<div class="modal-overlay" id="modal-reject">
+  <div class="modal">
+    <div class="modal-head">
+      <div class="modal-title">Reject Expense</div>
+      <span class="modal-close" (click)="closeModal('modal-reject')"><i class="ti ti-x"></i></span>
+    </div>
+    <div class="modal-body">
+      <div class="form-field">
+        <label>Reason for rejection</label>
+        <select class="form-input">
+          <option>Missing receipts / documentation</option>
+          <option>Exceeds policy limits</option>
+          <option>Non-business expense</option>
+          <option>Duplicate submission</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label>Notes (optional)</label
+        ><textarea
+          class="form-input"
+          rows="3"
+          placeholder="Add notes for the employee..."
+        ></textarea>
+      </div>
+    </div>
+    <div class="modal-foot">
+      <button class="btn" onclick="closeModal('modal-reject')">Cancel</button>
+      <button
+        class="btn danger"
+        (click)="
+          closeModal('modal-reject'); showToast('Expense rejected & employee notified', 'danger')
+        "
+      >
+        Reject Expense
+      </button>
     </div>
   </div>
 </div>
