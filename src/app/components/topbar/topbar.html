@@ -11,6 +11,13 @@
       <i class="ti ti-bell" style="font-size: 18px"></i>
       <div class="notif-dot"></div>
     </div>
+    <div class="icon-btn theme-toggle" (click)="toggleTheme()">
+      @if (theme.isDark()) {
+        <i class="ti ti-sun" style="font-size: 18px"></i>
+      } @else {
+        <i class="ti ti-moon" style="font-size: 18px"></i>
+      }
+    </div>
     <div class="icon-btn" onclick="showToast('Help center coming soon', 'info')">
       <i class="ti ti-help-circle" style="font-size: 18px"></i>
     </div>

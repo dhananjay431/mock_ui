@@ -36,6 +36,39 @@
   --font: 'DM Sans', sans-serif;
   --mono: 'DM Mono', monospace;
 }
+
+/* Light Theme Overrides */
+.light-theme {
+  --navy: #f8f9fc;
+  --navy2: #ffffff;
+  --navy3: #f1f3f7;
+  --navy4: #e8ebf0;
+  --navy5: #dce0e8;
+  --accent: #4f6ef7;
+  --accent2: #3d5be0;
+  --accent-glow: rgba(79, 110, 247, 0.12);
+  --teal: #0d9c7a;
+  --teal-dim: rgba(14, 201, 158, 0.1);
+  --amber: #d97706;
+  --amber-dim: rgba(245, 158, 11, 0.1);
+  --red: #dc2626;
+  --red-dim: rgba(239, 68, 68, 0.08);
+  --pink: #d9467a;
+  --pink-dim: rgba(232, 121, 160, 0.1);
+  --purple: #7c3aed;
+  --purple-dim: rgba(167, 139, 250, 0.1);
+  --text1: #1a1f36;
+  --text2: #5e6278;
+  --text3: #8c8fa3;
+  --border: rgba(0, 0, 0, 0.06);
+  --border2: rgba(0, 0, 0, 0.12);
+  --success: #059669;
+  --success-dim: rgba(16, 185, 129, 0.1);
+  --warning: #d97706;
+  --warning-dim: rgba(245, 158, 11, 0.1);
+  --danger: #dc2626;
+  --danger-dim: rgba(239, 68, 68, 0.08);
+}
 *,
 *::before,
 *::after {
