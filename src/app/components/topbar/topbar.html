@@ -1,0 +1,29 @@
+<div class="topbar">
+  <div class="breadcrumb" id="breadcrumb">
+    Expenses <span class="sep">›</span> Expense Batch <span class="sep">›</span>
+    <span>EXP-BAT-2024-0515-001</span>
+  </div>
+  <span class="status-pill success" id="topbar-status"
+    ><i class="ti ti-circle-check" style="font-size: 12px"></i> AI Processing Complete</span
+  >
+  <div class="topbar-actions">
+    <div class="icon-btn" onclick="showToast('No new notifications', 'info')">
+      <i class="ti ti-bell" style="font-size: 18px"></i>
+      <div class="notif-dot"></div>
+    </div>
+    <div class="icon-btn" onclick="showToast('Help center coming soon', 'info')">
+      <i class="ti ti-help-circle" style="font-size: 18px"></i>
+    </div>
+    <button
+      class="ask-ai-btn"
+      onclick="
+        showToast(
+          'AI Assistant: All 6 policy checks passed. 95% confidence split. Safe to approve.',
+          'info',
+        )
+      "
+    >
+      <i class="ti ti-robot" style="font-size: 14px"></i> Ask AI Assistant
+    </button>
+  </div>
+</div>

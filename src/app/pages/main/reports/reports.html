@@ -1,0 +1,1396 @@
+<!-- PAGE: DETAIL (default) -->
+<div class="page" id="page-expenses">
+  <div class="action-row">
+    <div class="page-info">
+      <div class="page-title">Multiple Expenses in Single Transaction</div>
+      <div class="page-sub">Travel — Multiple Days Expense Reimbursement</div>
+    </div>
+    <button class="btn" onclick="showToast('Expense sent back to employee', 'info')">
+      Send Back
+    </button>
+    <button class="btn" onclick="showToast('Info request sent to Rahul Mehta', 'info')">
+      Request Info
+    </button>
+    <button class="btn danger" onclick="openModal('modal-reject')">Reject</button>
+    <button class="btn primary" onclick="openModal('modal-approve')">Approve</button>
+  </div>
+
+  <!-- Meta Bar -->
+  <div class="meta-bar">
+    <div class="meta-item">
+      <label>Employee</label>
+      <div class="val">
+        <div class="emp-av">RM</div>
+        Rahul Mehta
+      </div>
+    </div>
+    <div class="meta-item">
+      <label>Employee ID</label>
+      <div class="val">E12345</div>
+    </div>
+    <div class="meta-item">
+      <label>Department</label>
+      <div class="val">Sales</div>
+    </div>
+    <div class="meta-item">
+      <label>Purpose</label>
+      <div class="val" style="font-size: 11.5px">Client Meeting — Bangalore</div>
+    </div>
+    <div class="meta-item">
+      <label>Transaction Date</label>
+      <div class="val">14 May 2024</div>
+    </div>
+    <div class="meta-item">
+      <label>Total Amount</label>
+      <div class="val amount-big">
+        ₹18,742.60 <span style="font-size: 10px; color: var(--text3)">INR</span>
+      </div>
+    </div>
+    <div class="meta-item">
+      <label>Submitted On</label>
+      <div class="val">15 May 2024</div>
+    </div>
+    <div class="meta-item">
+      <label>Source</label>
+      <div class="val">HDFC ●●●● 4421</div>
+    </div>
+  </div>
+
+  <!-- 3-col grid -->
+  <div class="grid3">
+    <!-- Col 1: Receipt -->
+    <div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">
+            <span class="sec-num">1</span>Original Transaction &amp; Receipt
+          </div>
+          <span class="status-pill success" style="font-size: 10.5px; padding: 2px 8px"
+            ><i class="ti ti-circle-check" style="font-size: 11px"></i>Verified</span
+          >
+        </div>
+        <div class="card-body">
+          <div class="bank-row">
+            <div>
+              <div
+                style="
+                  font-size: 12.5px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                "
+              >
+                <i class="ti ti-building-bank" style="font-size: 14px"></i>HDFC Bank ●●●● 4421
+              </div>
+              <div style="font-size: 10.5px; color: var(--text3); margin-top: 2px">
+                14 May 2024 · 07:42 PM
+              </div>
+            </div>
+            <div style="font-size: 15px; font-weight: 600; font-family: var(--mono)">
+              ₹18,742.60
+            </div>
+          </div>
+          <div class="inv-box">
+            <div
+              style="display: flex; justify-content: space-between; gap: 8px; margin-bottom: 10px"
+            >
+              <div>
+                <div class="inv-hotel">
+                  TAJ MG ROAD<br /><span style="font-size: 11px; font-weight: 400">BANGALORE</span>
+                </div>
+                <div class="inv-meta" style="margin-top: 6px">
+                  Indian Hotels Company Limited<br />No. 41/3, Mahatma Gandhi Road<br />Bangalore —
+                  560 001, India<br />GSTIN: 29AAAC0370Q1ZB
+                </div>
+              </div>
+              <div class="inv-meta" style="text-align: right">
+                Invoice No: BLR/24-25/48762<br />Date: 14 May 2024<br />Guest: Rahul Mehta<br />Room:
+                1803<br />Co: ABC Pvt. Ltd.
+              </div>
+            </div>
+            <div
+              style="
+                font-size: 10px;
+                color: var(--accent);
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                margin-bottom: 4px;
+              "
+            >
+              Tax Invoice
+            </div>
+            <table class="inv-table">
+              <tbody>
+                <tr>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th style="text-align: right">₹</th>
+                </tr>
+                <tr>
+                  <td>10 May</td>
+                  <td>Room Tariff</td>
+                  <td>6,500.00</td>
+                </tr>
+                <tr>
+                  <td>10 May</td>
+                  <td>Food &amp; Beverages</td>
+                  <td>2,450.00</td>
+                </tr>
+                <tr>
+                  <td>11 May</td>
+                  <td>Room Tariff</td>
+                  <td>6,500.00</td>
+                </tr>
+                <tr>
+                  <td>11 May</td>
+                  <td>Food &amp; Beverages</td>
+                  <td>2,230.00</td>
+                </tr>
+                <tr>
+                  <td>11 May</td>
+                  <td>Laundry</td>
+                  <td>320.00</td>
+                </tr>
+                <tr>
+                  <td>12 May</td>
+                  <td>Local Transport</td>
+                  <td>742.60</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top: 8px; padding-top: 6px; border-top: 1px solid var(--border)">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  font-size: 11px;
+                  color: var(--text3);
+                  padding: 2px 0;
+                "
+              >
+                <span>Subtotal</span><span style="font-family: var(--mono)">18,742.60</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  font-size: 11px;
+                  color: var(--text3);
+                  padding: 2px 0;
+                "
+              >
+                <span>IGST (12%)</span><span style="font-family: var(--mono)">1,998.72</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  font-size: 12px;
+                  font-weight: 600;
+                  margin-top: 4px;
+                  padding-top: 4px;
+                  border-top: 1px solid var(--border);
+                "
+              >
+                <span>Total</span
+                ><span style="font-family: var(--mono); color: var(--accent)">₹18,742.60</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 2: AI Split + GL -->
+    <div class="col-stack">
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">
+            <span class="sec-num">2</span>AI Split &amp; Categorization
+            <span style="font-size: 11px; color: var(--text3); font-weight: 400">(6 Expenses)</span>
+          </div>
+          <span class="conf-badge">Confidence: 95%</span>
+        </div>
+        <div class="tabs">
+          <div class="tab active" onclick="setTab(this)">By Category</div>
+          <div class="tab" onclick="setTab(this)">By Date</div>
+          <div class="tab" onclick="setTab(this)">By Merchant</div>
+        </div>
+        <div style="overflow-x: auto">
+          <table class="exp-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Date</th>
+                <th>Expense Details</th>
+                <th>Category (AI)</th>
+                <th>Amount (₹)</th>
+                <th>Tax (₹)</th>
+                <th>Reimbursable (₹)</th>
+                <th>Policy</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td style="color: var(--text3)">1</td>
+                <td style="white-space: nowrap; color: var(--text2)">10 May 24</td>
+                <td>
+                  <div style="font-size: 12px; font-weight: 500">Room Tariff</div>
+                  <div style="font-size: 10.5px; color: var(--text3)">Taj MG Road, Bangalore</div>
+                </td>
+                <td><span class="cat-tag cat-hotel">Hotel · Accommodation</span></td>
+                <td style="font-family: var(--mono)">6,500.00</td>
+                <td style="font-family: var(--mono); color: var(--text3)">780.00</td>
+                <td style="font-family: var(--mono)">6,500.00</td>
+                <td>
+                  <span class="pass-tag"
+                    ><i class="ti ti-check" style="font-size: 10px"></i>Pass</span
+                  >
+                </td>
+                <td>
+                  <div class="row-act">
+                    <i class="ti ti-edit" title="Edit"></i
+                    ><i
+                      class="ti ti-trash"
+                      title="Delete"
+                      onclick="showToast('Row deleted', 'danger')"
+                    ></i>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="color: var(--text3)">2</td>
+                <td style="white-space: nowrap; color: var(--text2)">10 May 24</td>
+                <td>
+                  <div style="font-size: 12px; font-weight: 500">Food &amp; Beverages</div>
+                  <div style="font-size: 10.5px; color: var(--text3)">Taj MG Road, Bangalore</div>
+                </td>
+                <td><span class="cat-tag cat-meal">Meals · Business</span></td>
+                <td style="font-family: var(--mono)">2,450.00</td>
+                <td style="font-family: var(--mono); color: var(--text3)">294.00</td>
+                <td style="font-family: var(--mono)">2,450.00</td>
+                <td>
+                  <span class="pass-tag"
+                    ><i class="ti ti-check" style="font-size: 10px"></i>Pass</span
+                  >
+                </td>
+                <td>
+                  <div class="row-act">
+                    <i class="ti ti-edit"></i
+                    ><i class="ti ti-trash" onclick="showToast('Row deleted', 'danger')"></i>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="color: var(--text3)">3</td>
+                <td style="white-space: nowrap; color: var(--text2)">11 May 24</td>
+                <td>
+                  <div style="font-size: 12px; font-weight: 500">Room Tariff</div>
+                  <div style="font-size: 10.5px; color: var(--text3)">Taj MG Road, Bangalore</div>
+                </td>
+                <td><span class="cat-tag cat-hotel">Hotel · Accommodation</span></td>
+                <td style="font-family: var(--mono)">6,500.00</td>
+                <td style="font-family: var(--mono); color: var(--text3)">780.00</td>
+                <td style="font-family: var(--mono)">6,500.00</td>
+                <td>
+                  <span class="pass-tag"
+                    ><i class="ti ti-check" style="font-size: 10px"></i>Pass</span
+                  >
+                </td>
+                <td>
+                  <div class="row-act">
+                    <i class="ti ti-edit"></i
+                    ><i class="ti ti-trash" onclick="showToast('Row deleted', 'danger')"></i>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="color: var(--text3)">4</td>
+                <td style="white-space: nowrap; color: var(--text2)">11 May 24</td>
+                <td>
+                  <div style="font-size: 12px; font-weight: 500">Food &amp; Beverages</div>
+                  <div style="font-size: 10.5px; color: var(--text3)">Taj MG Road, Bangalore</div>
+                </td>
+                <td><span class="cat-tag cat-meal">Meals · Business</span></td>
+                <td style="font-family: var(--mono)">2,230.00</td>
+                <td style="font-family: var(--mono); color: var(--text3)">267.60</td>
+                <td style="font-family: var(--mono)">2,230.00</td>
+                <td>
+                  <span class="pass-tag"
+                    ><i class="ti ti-check" style="font-size: 10px"></i>Pass</span
+                  >
+                </td>
+                <td>
+                  <div class="row-act">
+                    <i class="ti ti-edit"></i
+                    ><i class="ti ti-trash" onclick="showToast('Row deleted', 'danger')"></i>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="color: var(--text3)">5</td>
+                <td style="white-space: nowrap; color: var(--text2)">11 May 24</td>
+                <td>
+                  <div style="font-size: 12px; font-weight: 500">Laundry</div>
+                  <div style="font-size: 10.5px; color: var(--text3)">Taj MG Road, Bangalore</div>
+                </td>
+                <td><span class="cat-tag cat-other">Other · Laundry</span></td>
+                <td style="font-family: var(--mono)">320.00</td>
+                <td style="font-family: var(--mono); color: var(--text3)">38.40</td>
+                <td style="font-family: var(--mono)">320.00</td>
+                <td>
+                  <span class="pass-tag"
+                    ><i class="ti ti-check" style="font-size: 10px"></i>Pass</span
+                  >
+                </td>
+                <td>
+                  <div class="row-act">
+                    <i class="ti ti-edit"></i
+                    ><i class="ti ti-trash" onclick="showToast('Row deleted', 'danger')"></i>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td style="color: var(--text3)">6</td>
+                <td style="white-space: nowrap; color: var(--text2)">12 May 24</td>
+                <td>
+                  <div style="font-size: 12px; font-weight: 500">Local Transport</div>
+                  <div style="font-size: 10.5px; color: var(--text3)">Uber</div>
+                </td>
+                <td><span class="cat-tag cat-transport">Transport · Local</span></td>
+                <td style="font-family: var(--mono)">742.60</td>
+                <td style="font-family: var(--mono); color: var(--text3)">0.00</td>
+                <td style="font-family: var(--mono)">742.60</td>
+                <td>
+                  <span class="pass-tag"
+                    ><i class="ti ti-check" style="font-size: 10px"></i>Pass</span
+                  >
+                </td>
+                <td>
+                  <div class="row-act">
+                    <i class="ti ti-edit"></i
+                    ><i class="ti ti-trash" onclick="showToast('Row deleted', 'danger')"></i>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="exp-footer">
+          <div style="display: flex; gap: 14px">
+            <div class="add-link" onclick="openModal('modal-add')">
+              <i class="ti ti-plus" style="font-size: 13px"></i>Add Manually
+            </div>
+            <div class="add-link" onclick="showToast('AI re-splitting expense...', 'info')">
+              <i class="ti ti-adjustments" style="font-size: 13px"></i>Split Differently
+            </div>
+          </div>
+          <div style="font-size: 12px; color: var(--text2); font-family: var(--mono)">
+            Total: ₹18,742.60 &nbsp;·&nbsp; Tax: ₹2,160.00 &nbsp;·&nbsp; Reimb: ₹18,742.60
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title"><span class="sec-num">6</span>GL &amp; Reimbursement Details</div>
+        </div>
+        <div class="gl-grid">
+          <div class="gl-field">
+            <label>Pay To</label
+            ><select class="gl-select">
+              <option>Rahul Mehta (Employee)</option>
+            </select>
+          </div>
+          <div class="gl-field">
+            <label>Reimb. Account</label
+            ><select class="gl-select">
+              <option>Employee Reimb. (2200)</option>
+            </select>
+          </div>
+          <div class="gl-field">
+            <label>Payment Mode</label
+            ><select class="gl-select">
+              <option>Bank Transfer</option>
+              <option>Cheque</option>
+              <option>Wallet</option>
+            </select>
+          </div>
+          <div class="gl-field">
+            <label>Cost Center</label
+            ><select class="gl-select">
+              <option>CC-SALES-01</option>
+              <option>CC-OPS-02</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Col 3: Policy, Summary, Insights, Activity -->
+    <div class="col-stack">
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title"><span class="sec-num">3</span>Policy &amp; Compliance</div>
+        </div>
+        <div style="padding: 8px 14px">
+          <div class="check-item">
+            <div class="check-label"><i class="ti ti-circle-check ok"></i>Travel policy</div>
+            <span class="status-pill success" style="font-size: 10px; padding: 2px 7px"
+              >Compliant</span
+            >
+          </div>
+          <div class="check-item">
+            <div class="check-label"><i class="ti ti-circle-check ok"></i>Daily hotel limit</div>
+            <div class="check-val">Within ₹7,500</div>
+          </div>
+          <div class="check-item">
+            <div class="check-label"><i class="ti ti-circle-check ok"></i>Meal limit / day</div>
+            <div class="check-val">Within ₹2,500</div>
+          </div>
+          <div class="check-item">
+            <div class="check-label"><i class="ti ti-circle-check ok"></i>Weekend stay</div>
+            <div class="check-val">Allowed</div>
+          </div>
+          <div class="check-item">
+            <div class="check-label"><i class="ti ti-circle-check ok"></i>Advance adjustment</div>
+            <div class="check-val">None taken</div>
+          </div>
+          <div class="check-item">
+            <div class="check-label"><i class="ti ti-circle-check ok"></i>Duplicate check</div>
+            <div class="check-val">No duplicates</div>
+          </div>
+          <div class="check-item">
+            <div class="check-label"><i class="ti ti-alert-triangle warn"></i>Receipts</div>
+            <div class="check-val" style="color: var(--amber)">1 for 6 expenses</div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title"><span class="sec-num">4</span>Expense Summary</div>
+        </div>
+        <div style="padding: 8px 14px">
+          <div class="sum-row">
+            <span>Total Amount</span><span class="val-mono">₹18,742.60</span>
+          </div>
+          <div class="sum-row">
+            <span>Total Tax</span
+            ><span class="val-mono" style="color: var(--text2)">₹2,160.00</span>
+          </div>
+          <div class="sum-row">
+            <span>Reimbursable</span><span class="val-mono">₹18,742.60</span>
+          </div>
+          <div class="sum-row">
+            <span style="color: var(--text3)">Non-Reimbursable</span
+            ><span class="val-mono" style="color: var(--text3)">₹0.00</span>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title"><span class="sec-num">5</span>AI Insights</div>
+          <span class="status-pill success" style="font-size: 10px; padding: 2px 7px"
+            >Low Risk</span
+          >
+        </div>
+        <div style="padding: 8px 14px">
+          <div class="insight-item">
+            <i class="ti ti-circle-check"></i>All expenses match policy and appear normal.
+          </div>
+          <div class="insight-item">
+            <i class="ti ti-circle-check"></i>Split accuracy 95% based on invoice patterns.
+          </div>
+          <div class="insight-item">
+            <i class="ti ti-circle-check"></i>No duplicate or suspicious patterns found.
+          </div>
+        </div>
+        <div style="padding: 4px 14px 10px">
+          <span
+            style="font-size: 12px; color: var(--accent); cursor: pointer"
+            onclick="showToast('Full AI risk report available in Reports tab', 'info')"
+            >View full analysis →</span
+          >
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head">
+          <div class="card-title">Activity Log</div>
+          <span style="font-size: 11.5px; color: var(--accent); cursor: pointer">View all</span>
+        </div>
+        <div style="padding: 8px 14px">
+          <div class="act-item">
+            <i class="ti ti-circle-check"></i>
+            <div>
+              <div class="act-text">AI split 1 receipt into 6 expenses</div>
+              <div class="act-time">15 May 2024, 10:31 AM</div>
+            </div>
+          </div>
+          <div class="act-item">
+            <i class="ti ti-circle-check"></i>
+            <div>
+              <div class="act-text">Due to you for review</div>
+              <div class="act-time">15 May 2024, 10:32 AM</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="timeline-wrap">
+    <div class="tl-title">Review Timeline</div>
+    <div class="timeline">
+      <div class="tl-step">
+        <div class="tl-dot done"><i class="ti ti-check"></i></div>
+        <div class="tl-label"><strong>Submitted</strong><span>15 May, 10:30 AM</span></div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot done"><i class="ti ti-check"></i></div>
+        <div class="tl-label"><strong>AI Processing</strong><span>15 May, 10:31 AM</span></div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot active"></div>
+        <div class="tl-label">
+          <strong>Finance Review</strong
+          ><span style="color: var(--accent); font-weight: 500">In Progress</span>
+        </div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-label"><strong>Approved</strong><span>—</span></div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-label"><strong>Processing</strong><span>—</span></div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot"></div>
+        <div class="tl-label"><strong>Paid</strong><span>—</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: DASHBOARD -->
+<div class="page" id="page-dashboard">
+  <div class="page-header">
+    <div class="page-title">Dashboard</div>
+    <div class="page-sub">Welcome back, Priya. Here's what needs your attention today.</div>
+  </div>
+  <div class="stats-grid">
+    <div class="stat-card blue">
+      <div class="stat-label">Pending Approvals</div>
+      <div class="stat-value">12</div>
+      <div class="stat-change"><span class="up">↑ 3</span> from yesterday</div>
+      <i class="ti ti-clock stat-icon"></i>
+    </div>
+    <div class="stat-card teal">
+      <div class="stat-label">Total Submitted (MTD)</div>
+      <div class="stat-value">₹4.2L</div>
+      <div class="stat-change"><span class="up">↑ 12%</span> vs last month</div>
+      <i class="ti ti-receipt stat-icon"></i>
+    </div>
+    <div class="stat-card amber">
+      <div class="stat-label">Avg Processing Time</div>
+      <div class="stat-value">1.8 hrs</div>
+      <div class="stat-change"><span class="up">↓ 22%</span> with AI assist</div>
+      <i class="ti ti-bolt stat-icon"></i>
+    </div>
+    <div class="stat-card red">
+      <div class="stat-label">Policy Violations</div>
+      <div class="stat-value">2</div>
+      <div class="stat-change"><span class="down">↑ 1</span> this week</div>
+      <i class="ti ti-alert-triangle stat-icon"></i>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 14px">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Recent Expense Batches</div>
+        <button
+          class="btn"
+          style="font-size: 11px; padding: 4px 10px"
+          onclick="switchPage('expenses')"
+        >
+          View All
+        </button>
+      </div>
+      <table class="exp-list-table">
+        <thead>
+          <tr>
+            <th>Batch ID</th>
+            <th>Employee</th>
+            <th>Department</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Submitted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="selected" onclick="switchPage('expenses')">
+            <td style="font-family: var(--mono); font-size: 11.5px; color: var(--accent)">
+              EXP-BAT-2024-0515-001
+            </td>
+            <td>Rahul Mehta</td>
+            <td>Sales</td>
+            <td style="font-family: var(--mono)">₹18,742.60</td>
+            <td><span class="status-pill warning" style="font-size: 10px">In Review</span></td>
+            <td style="color: var(--text3)">15 May</td>
+          </tr>
+          <tr onclick="showToast('Opening EXP-BAT-2024-0514-002...', 'info')">
+            <td style="font-family: var(--mono); font-size: 11.5px">EXP-BAT-2024-0514-002</td>
+            <td>Anita Rao</td>
+            <td>Marketing</td>
+            <td style="font-family: var(--mono)">₹9,250.00</td>
+            <td><span class="status-pill success" style="font-size: 10px">Approved</span></td>
+            <td style="color: var(--text3)">14 May</td>
+          </tr>
+          <tr onclick="showToast('Opening EXP-BAT-2024-0513-003...', 'info')">
+            <td style="font-family: var(--mono); font-size: 11.5px">EXP-BAT-2024-0513-003</td>
+            <td>Vikram Desai</td>
+            <td>Engineering</td>
+            <td style="font-family: var(--mono)">₹5,800.00</td>
+            <td><span class="status-pill danger" style="font-size: 10px">Rejected</span></td>
+            <td style="color: var(--text3)">13 May</td>
+          </tr>
+          <tr onclick="showToast('Opening EXP-BAT-2024-0512-004...', 'info')">
+            <td style="font-family: var(--mono); font-size: 11.5px">EXP-BAT-2024-0512-004</td>
+            <td>Meera Pillai</td>
+            <td>HR</td>
+            <td style="font-family: var(--mono)">₹12,400.00</td>
+            <td><span class="status-pill warning" style="font-size: 10px">In Review</span></td>
+            <td style="color: var(--text3)">12 May</td>
+          </tr>
+          <tr onclick="showToast('Opening EXP-BAT-2024-0511-005...', 'info')">
+            <td style="font-family: var(--mono); font-size: 11.5px">EXP-BAT-2024-0511-005</td>
+            <td>Suresh Kumar</td>
+            <td>Finance</td>
+            <td style="font-family: var(--mono)">₹3,120.00</td>
+            <td><span class="status-pill success" style="font-size: 10px">Paid</span></td>
+            <td style="color: var(--text3)">11 May</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Spend by Category (May)</div></div>
+      <div style="padding: 14px 16px">
+        <div class="chart-bar-wrap">
+          <div class="chart-bar" style="height: 80%; background: var(--accent)" title="Hotel"></div>
+          <div class="chart-bar" style="height: 55%; background: var(--teal)" title="Meals"></div>
+          <div
+            class="chart-bar"
+            style="height: 35%; background: var(--amber)"
+            title="Transport"
+          ></div>
+          <div class="chart-bar" style="height: 20%; background: var(--pink)" title="Other"></div>
+          <div
+            class="chart-bar"
+            style="height: 45%; background: var(--purple)"
+            title="Flights"
+          ></div>
+        </div>
+        <div class="chart-labels">
+          <div class="chart-label">Hotel</div>
+          <div class="chart-label">Meals</div>
+          <div class="chart-label">Transport</div>
+          <div class="chart-label">Other</div>
+          <div class="chart-label">Flights</div>
+        </div>
+        <div style="margin-top: 14px; border-top: 1px solid var(--border); padding-top: 12px">
+          <div class="legend-item">
+            <div class="legend-dot" style="background: var(--accent)"></div>
+            <span style="flex: 1">Hotel</span
+            ><span style="font-family: var(--mono)">₹1,82,400</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: var(--teal)"></div>
+            <span style="flex: 1">Meals</span><span style="font-family: var(--mono)">₹62,300</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: var(--amber)"></div>
+            <span style="flex: 1">Transport</span
+            ><span style="font-family: var(--mono)">₹38,100</span>
+          </div>
+          <div class="legend-item">
+            <div class="legend-dot" style="background: var(--pink)"></div>
+            <span style="flex: 1">Other</span><span style="font-family: var(--mono)">₹18,900</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: APPROVALS -->
+<div class="page" id="page-approvals">
+  <div class="page-header">
+    <div class="page-title">Pending Approvals</div>
+    <div class="page-sub">12 expense batches awaiting your review</div>
+  </div>
+  <div class="card">
+    <table class="exp-list-table">
+      <thead>
+        <tr>
+          <th>Batch ID</th>
+          <th>Employee</th>
+          <th>Dept.</th>
+          <th>Purpose</th>
+          <th>Amount</th>
+          <th>AI Risk</th>
+          <th>Submitted</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr onclick="switchPage('expenses')">
+          <td style="font-family: var(--mono); font-size: 11.5px; color: var(--accent)">
+            EXP-BAT-2024-0515-001
+          </td>
+          <td>
+            <div style="display: flex; align-items: center; gap: 6px">
+              <div class="emp-av" style="width: 24px; height: 24px; font-size: 9px">RM</div>
+              Rahul Mehta
+            </div>
+          </td>
+          <td>Sales</td>
+          <td>Client Meeting — Bangalore</td>
+          <td style="font-family: var(--mono)">₹18,742.60</td>
+          <td><span class="status-pill success" style="font-size: 10px">Low</span></td>
+          <td style="color: var(--text3)">15 May 2024</td>
+          <td>
+            <div style="display: flex; gap: 6px">
+              <button
+                class="btn success"
+                style="font-size: 11px; padding: 3px 9px"
+                onclick="
+                  openModal('modal-approve');
+                  event.stopPropagation();
+                "
+              >
+                Approve</button
+              ><button
+                class="btn danger"
+                style="font-size: 11px; padding: 3px 9px"
+                onclick="
+                  openModal('modal-reject');
+                  event.stopPropagation();
+                "
+              >
+                Reject
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family: var(--mono); font-size: 11.5px">EXP-BAT-2024-0512-004</td>
+          <td>
+            <div style="display: flex; align-items: center; gap: 6px">
+              <div
+                class="emp-av"
+                style="
+                  width: 24px;
+                  height: 24px;
+                  font-size: 9px;
+                  background: var(--pink-dim);
+                  border-color: var(--pink);
+                  color: var(--pink);
+                "
+              >
+                MP
+              </div>
+              Meera Pillai
+            </div>
+          </td>
+          <td>HR</td>
+          <td>Recruitment Drive — Chennai</td>
+          <td style="font-family: var(--mono)">₹12,400.00</td>
+          <td><span class="status-pill warning" style="font-size: 10px">Medium</span></td>
+          <td style="color: var(--text3)">12 May 2024</td>
+          <td>
+            <div style="display: flex; gap: 6px">
+              <button
+                class="btn success"
+                style="font-size: 11px; padding: 3px 9px"
+                onclick="
+                  showToast('Approved MP expense', 'success');
+                  event.stopPropagation();
+                "
+              >
+                Approve</button
+              ><button
+                class="btn danger"
+                style="font-size: 11px; padding: 3px 9px"
+                onclick="
+                  showToast('Rejected MP expense', 'danger');
+                  event.stopPropagation();
+                "
+              >
+                Reject
+              </button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-family: var(--mono); font-size: 11.5px">EXP-2024-0510-008</td>
+          <td>
+            <div style="display: flex; align-items: center; gap: 6px">
+              <div
+                class="emp-av"
+                style="
+                  width: 24px;
+                  height: 24px;
+                  font-size: 9px;
+                  background: var(--teal-dim);
+                  border-color: var(--teal);
+                  color: var(--teal);
+                "
+              >
+                AR
+              </div>
+              Anand Reddy
+            </div>
+          </td>
+          <td>Engineering</td>
+          <td>AWS Summit — Mumbai</td>
+          <td style="font-family: var(--mono)">₹31,200.00</td>
+          <td><span class="status-pill danger" style="font-size: 10px">High</span></td>
+          <td style="color: var(--text3)">10 May 2024</td>
+          <td>
+            <div style="display: flex; gap: 6px">
+              <button
+                class="btn success"
+                style="font-size: 11px; padding: 3px 9px"
+                onclick="
+                  showToast('Approved AR expense', 'success');
+                  event.stopPropagation();
+                "
+              >
+                Approve</button
+              ><button
+                class="btn danger"
+                style="font-size: 11px; padding: 3px 9px"
+                onclick="
+                  showToast('Rejected AR expense', 'danger');
+                  event.stopPropagation();
+                "
+              >
+                Reject
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PAGE: REPORTS -->
+<div class="page active" id="page-reports">
+  <div class="page-header">
+    <div class="page-title">Reports &amp; Analytics</div>
+    <div class="page-sub">May 2024 — expense intelligence overview</div>
+  </div>
+  <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px">
+    <div class="stat-card blue">
+      <div class="stat-label">Total Expenses MTD</div>
+      <div class="stat-value">₹4.2L</div>
+      <div class="stat-change"><span class="up">↑ 12%</span> vs Apr 2024</div>
+    </div>
+    <div class="stat-card teal">
+      <div class="stat-label">Reimbursed (MTD)</div>
+      <div class="stat-value">₹3.8L</div>
+      <div class="stat-change">91% reimbursement rate</div>
+    </div>
+    <div class="stat-card amber">
+      <div class="stat-label">Avg per Employee</div>
+      <div class="stat-value">₹8,400</div>
+      <div class="stat-change"><span class="down">↑ 5%</span> above budget</div>
+    </div>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px">
+    <div class="card">
+      <div class="card-head"><div class="card-title">Monthly Spend Trend (₹)</div></div>
+      <div style="padding: 16px">
+        <div class="chart-bar-wrap" style="height: 140px">
+          <div
+            class="chart-bar"
+            style="height: 45%; background: var(--navy5); border-radius: 4px 4px 0 0"
+            title="Jan"
+          ></div>
+          <div class="chart-bar" style="height: 60%; background: var(--navy5)" title="Feb"></div>
+          <div class="chart-bar" style="height: 40%; background: var(--navy5)" title="Mar"></div>
+          <div class="chart-bar" style="height: 75%; background: var(--navy5)" title="Apr"></div>
+          <div
+            class="chart-bar"
+            style="height: 100%; background: var(--accent)"
+            title="May (current)"
+          ></div>
+        </div>
+        <div class="chart-labels">
+          <div class="chart-label">Jan</div>
+          <div class="chart-label">Feb</div>
+          <div class="chart-label">Mar</div>
+          <div class="chart-label">Apr</div>
+          <div class="chart-label">May</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Top Spenders — May</div></div>
+      <div style="padding: 14px 16px">
+        <table style="width: 100%; border-collapse: collapse; font-size: 12.5px">
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border)">
+              <th
+                style="
+                  color: var(--text3);
+                  font-weight: 400;
+                  text-align: left;
+                  padding: 6px 0;
+                  font-size: 10.5px;
+                "
+              >
+                Employee
+              </th>
+              <th
+                style="
+                  color: var(--text3);
+                  font-weight: 400;
+                  text-align: left;
+                  padding: 6px 0;
+                  font-size: 10.5px;
+                "
+              >
+                Dept.
+              </th>
+              <th
+                style="
+                  color: var(--text3);
+                  font-weight: 400;
+                  text-align: right;
+                  padding: 6px 0;
+                  font-size: 10.5px;
+                "
+              >
+                Amount
+              </th>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border)">
+              <td style="padding: 8px 0">Anand Reddy</td>
+              <td style="color: var(--text3)">Engineering</td>
+              <td style="text-align: right; font-family: var(--mono)">₹31,200</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border)">
+              <td style="padding: 8px 0">Rahul Mehta</td>
+              <td style="color: var(--text3)">Sales</td>
+              <td style="text-align: right; font-family: var(--mono)">₹18,742</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border)">
+              <td style="padding: 8px 0">Meera Pillai</td>
+              <td style="color: var(--text3)">HR</td>
+              <td style="text-align: right; font-family: var(--mono)">₹12,400</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px 0">Anita Rao</td>
+              <td style="color: var(--text3)">Marketing</td>
+              <td style="text-align: right; font-family: var(--mono)">₹9,250</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: BUDGETS -->
+<div class="page" id="page-budgets">
+  <div class="page-header">
+    <div class="page-title">Budget Tracking</div>
+    <div class="page-sub">May 2024 — departmental budget utilization</div>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Department Budget Utilization</div>
+        <span style="font-size: 11px; color: var(--text3)">May 2024</span>
+      </div>
+      <div style="padding: 12px 16px">
+        <div class="budget-row">
+          <div class="budget-label">Sales</div>
+          <div class="budget-bar-wrap">
+            <div class="budget-bar" style="width: 82%; background: var(--amber)"></div>
+          </div>
+          <div class="budget-pct" style="color: var(--amber)">82%</div>
+          <div class="budget-amt">₹1,64,000 / ₹2,00,000</div>
+        </div>
+        <div class="budget-row">
+          <div class="budget-label">Engineering</div>
+          <div class="budget-bar-wrap">
+            <div class="budget-bar" style="width: 62%; background: var(--accent)"></div>
+          </div>
+          <div class="budget-pct">62%</div>
+          <div class="budget-amt">₹93,000 / ₹1,50,000</div>
+        </div>
+        <div class="budget-row">
+          <div class="budget-label">Marketing</div>
+          <div class="budget-bar-wrap">
+            <div class="budget-bar" style="width: 48%; background: var(--teal)"></div>
+          </div>
+          <div class="budget-pct">48%</div>
+          <div class="budget-amt">₹48,000 / ₹1,00,000</div>
+        </div>
+        <div class="budget-row">
+          <div class="budget-label">HR</div>
+          <div class="budget-bar-wrap">
+            <div class="budget-bar" style="width: 95%; background: var(--red)"></div>
+          </div>
+          <div class="budget-pct" style="color: var(--red)">95%</div>
+          <div class="budget-amt">₹47,500 / ₹50,000</div>
+        </div>
+        <div class="budget-row">
+          <div class="budget-label">Finance</div>
+          <div class="budget-bar-wrap">
+            <div class="budget-bar" style="width: 30%; background: var(--success)"></div>
+          </div>
+          <div class="budget-pct" style="color: var(--success)">30%</div>
+          <div class="budget-amt">₹15,000 / ₹50,000</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head"><div class="card-title">Policy Alerts</div></div>
+      <div style="padding: 12px 16px">
+        <div
+          style="
+            background: var(--danger-dim);
+            border: 1px solid rgba(239, 68, 68, 0.15);
+            border-radius: var(--radius);
+            padding: 12px;
+            margin-bottom: 10px;
+          "
+        >
+          <div style="font-size: 12px; font-weight: 500; color: var(--red); margin-bottom: 4px">
+            <i class="ti ti-alert-triangle" style="margin-right: 5px"></i>HR Budget at 95%
+          </div>
+          <div style="font-size: 11.5px; color: var(--text2)">
+            HR department has nearly exhausted its May budget. 3 pending expense requests may push
+            it over.
+          </div>
+        </div>
+        <div
+          style="
+            background: var(--warning-dim);
+            border: 1px solid rgba(245, 158, 11, 0.2);
+            border-radius: var(--radius);
+            padding: 12px;
+          "
+        >
+          <div style="font-size: 12px; font-weight: 500; color: var(--amber); margin-bottom: 4px">
+            <i class="ti ti-alert-circle" style="margin-right: 5px"></i>Sales at 82% — on track
+          </div>
+          <div style="font-size: 11.5px; color: var(--text2)">
+            Sales is within limits but trending above forecast with 10 days remaining in the month.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAGE: RECEIPTS -->
+<div class="page" id="page-receipts">
+  <div class="page-header">
+    <div class="page-title">Receipts</div>
+    <div class="page-sub">All uploaded receipts and attachments</div>
+  </div>
+  <div class="card">
+    <div class="card-head">
+      <div style="display: flex; align-items: center; gap: 8px">
+        <input
+          type="text"
+          class="form-input"
+          placeholder="Search receipts..."
+          style="width: 220px; padding: 5px 10px; font-size: 12px"
+        />
+        <select class="form-input" style="width: 140px; padding: 5px 10px; font-size: 12px">
+          <option>All Categories</option>
+          <option>Hotel</option>
+          <option>Meals</option>
+          <option>Transport</option>
+        </select>
+      </div>
+      <button class="btn primary" onclick="showToast('Upload dialog opening...', 'info')">
+        <i class="ti ti-upload" style="font-size: 13px"></i> Upload Receipt
+      </button>
+    </div>
+    <table class="exp-list-table">
+      <thead>
+        <tr>
+          <th>Receipt ID</th>
+          <th>Merchant</th>
+          <th>Date</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Linked To</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="font-family: var(--mono); font-size: 11px; color: var(--accent)">REC-001</td>
+          <td>Taj MG Road, Bangalore</td>
+          <td style="color: var(--text3)">14 May 2024</td>
+          <td style="font-family: var(--mono)">₹18,742.60</td>
+          <td><span class="cat-tag cat-hotel">Hotel · Multi</span></td>
+          <td style="color: var(--accent); font-size: 11.5px">EXP-BAT-2024-0515-001</td>
+          <td><span class="status-pill success" style="font-size: 10px">Verified</span></td>
+        </tr>
+        <tr>
+          <td style="font-family: var(--mono); font-size: 11px">REC-002</td>
+          <td>Café Coffee Day</td>
+          <td style="color: var(--text3)">13 May 2024</td>
+          <td style="font-family: var(--mono)">₹480.00</td>
+          <td><span class="cat-tag cat-meal">Meals</span></td>
+          <td style="color: var(--text3)">Unlinked</td>
+          <td><span class="status-pill warning" style="font-size: 10px">Pending</span></td>
+        </tr>
+        <tr>
+          <td style="font-family: var(--mono); font-size: 11px">REC-003</td>
+          <td>Uber India</td>
+          <td style="color: var(--text3)">12 May 2024</td>
+          <td style="font-family: var(--mono)">₹320.00</td>
+          <td><span class="cat-tag cat-transport">Transport</span></td>
+          <td style="color: var(--text3)">Unlinked</td>
+          <td><span class="status-pill warning" style="font-size: 10px">Pending</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PAGE: SETTINGS -->
+<div class="page" id="page-settings">
+  <div class="page-header">
+    <div class="page-title">Settings</div>
+    <div class="page-sub">Configure your expense management preferences</div>
+  </div>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px">
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <i class="ti ti-robot" style="color: var(--accent)"></i>AI Processing
+        </div>
+      </div>
+      <div style="padding: 14px 16px">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+          "
+        >
+          <div>
+            <div style="font-size: 12.5px; font-weight: 500">Auto AI Split</div>
+            <div style="font-size: 11px; color: var(--text3)">
+              Automatically split multi-item receipts
+            </div>
+          </div>
+          <div
+            onclick="
+              this.classList.toggle('on');
+              showToast('Setting updated', 'success');
+            "
+            style="
+              width: 38px;
+              height: 20px;
+              background: var(--accent);
+              border-radius: 20px;
+              cursor: pointer;
+              position: relative;
+              transition: background 0.15s;
+            "
+          >
+            <div
+              style="
+                width: 16px;
+                height: 16px;
+                background: #fff;
+                border-radius: 50%;
+                position: absolute;
+                top: 2px;
+                right: 2px;
+                transition: all 0.15s;
+              "
+            ></div>
+          </div>
+        </div>
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+          "
+        >
+          <div>
+            <div style="font-size: 12.5px; font-weight: 500">Policy Checks</div>
+            <div style="font-size: 11px; color: var(--text3)">Run automated compliance checks</div>
+          </div>
+          <div
+            style="
+              width: 38px;
+              height: 20px;
+              background: var(--accent);
+              border-radius: 20px;
+              cursor: pointer;
+              position: relative;
+            "
+          >
+            <div
+              style="
+                width: 16px;
+                height: 16px;
+                background: #fff;
+                border-radius: 50%;
+                position: absolute;
+                top: 2px;
+                right: 2px;
+              "
+            ></div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; justify-content: space-between">
+          <div>
+            <div style="font-size: 12.5px; font-weight: 500">Duplicate Detection</div>
+            <div style="font-size: 11px; color: var(--text3)">
+              Flag potential duplicate expenses
+            </div>
+          </div>
+          <div
+            style="
+              width: 38px;
+              height: 20px;
+              background: var(--accent);
+              border-radius: 20px;
+              cursor: pointer;
+              position: relative;
+            "
+          >
+            <div
+              style="
+                width: 16px;
+                height: 16px;
+                background: #fff;
+                border-radius: 50%;
+                position: absolute;
+                top: 2px;
+                right: 2px;
+              "
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <i class="ti ti-bell" style="color: var(--amber)"></i>Notifications
+        </div>
+      </div>
+      <div style="padding: 14px 16px">
+        <div class="form-field">
+          <label>Email for approvals</label
+          ><input class="form-input" value="priya.sharma@company.com" type="email" />
+        </div>
+        <div class="form-field">
+          <label>Approval reminder (hours)</label
+          ><input class="form-input" value="24" type="number" />
+        </div>
+        <button
+          class="btn primary"
+          style="margin-top: 4px"
+          onclick="showToast('Notification settings saved', 'success')"
+        >
+          Save Changes
+        </button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <i class="ti ti-currency-rupee" style="color: var(--teal)"></i>Policy Limits
+        </div>
+      </div>
+      <div style="padding: 14px 16px">
+        <div class="form-row">
+          <div class="form-field">
+            <label>Daily hotel limit (₹)</label
+            ><input class="form-input" value="7500" type="number" />
+          </div>
+          <div class="form-field">
+            <label>Meal limit per day (₹)</label
+            ><input class="form-input" value="2500" type="number" />
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label>Local transport limit (₹)</label
+            ><input class="form-input" value="1000" type="number" />
+          </div>
+          <div class="form-field">
+            <label>Advance limit (₹)</label><input class="form-input" value="50000" type="number" />
+          </div>
+        </div>
+        <button class="btn primary" onclick="showToast('Policy limits updated', 'success')">
+          Update Limits
+        </button>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">
+          <i class="ti ti-plug" style="color: var(--purple)"></i>Integrations
+        </div>
+      </div>
+      <div style="padding: 14px 16px">
+        <div class="budget-row" style="padding: 8px 0">
+          <div class="budget-label">
+            <div style="font-size: 12.5px; font-weight: 500">HDFC Bank</div>
+            <div style="font-size: 11px; color: var(--text3)">Auto-import transactions</div>
+          </div>
+          <span class="status-pill success" style="font-size: 10px">Connected</span>
+        </div>
+        <div class="budget-row" style="padding: 8px 0">
+          <div class="budget-label">
+            <div style="font-size: 12.5px; font-weight: 500">Tally ERP</div>
+            <div style="font-size: 11px; color: var(--text3)">GL sync</div>
+          </div>
+          <span class="status-pill success" style="font-size: 10px">Connected</span>
+        </div>
+        <div class="budget-row" style="padding: 8px 0">
+          <div class="budget-label">
+            <div style="font-size: 12.5px; font-weight: 500">Slack</div>
+            <div style="font-size: 11px; color: var(--text3)">Approval notifications</div>
+          </div>
+          <button
+            class="btn"
+            style="font-size: 11px; padding: 3px 9px"
+            onclick="showToast('Connecting Slack...', 'info')"
+          >
+            Connect
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
