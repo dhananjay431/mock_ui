@@ -1,7 +1,7 @@
 <div class="login-wrap">
   <!-- Left Branding Panel -->
-  <div class="login-brand">
-    <div class="brand-bg-orb"></div>
+  <div class="login-brand" (mousemove)="onBrandMouseMove($event)">
+    <div class="brand-bg-layer" #bgLayer></div>
     <div class="brand-content">
       <div class="brand-logo">
         <div class="logo-mark">E</div>
