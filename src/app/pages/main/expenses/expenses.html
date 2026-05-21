@@ -11,8 +11,10 @@
     <button class="btn" (click)="showToast('Info request sent to Rahul Mehta', 'info')">
       Request Info
     </button>
-    <button class="btn danger" (click)="openModal('modal-reject')">Reject</button>
-    <button class="btn primary" (click)="openModal('modal-approve')">Approve</button>
+    <button class="btn danger" data-bs-toggle="modal" data-bs-target="#modal-reject">Reject</button>
+    <button class="btn primary" data-bs-toggle="modal" data-bs-target="#modal-approve">
+      Approve
+    </button>
   </div>
 
   <!-- Meta Bar -->
@@ -60,7 +62,7 @@
   <div class="grid3">
     <!-- Col 1: Receipt -->
     <div>
-      <div class="card">
+      <div class="card" id="card-receipt">
         <div class="card-head">
           <div class="card-title">
             <span class="sec-num">1</span>Original Transaction &amp; Receipt
@@ -381,7 +383,10 @@
         </div>
         <div class="exp-footer">
           <div style="display: flex; gap: 14px">
-            <div class="add-link" onclick="openModal('modal-add')">
+            <div
+              class="add-link"
+              (click)="showToast('Add expense modal is not configured yet', 'info')"
+            >
               <i class="ti ti-plus" style="font-size: 13px"></i>Add Manually
             </div>
             <div class="add-link" onclick="showToast('AI re-splitting expense...', 'info')">
@@ -767,19 +772,17 @@
               <button
                 class="btn success"
                 style="font-size: 11px; padding: 3px 9px"
-                onclick="
-                  openModal('modal-approve');
-                  event.stopPropagation();
-                "
+                data-bs-toggle="modal"
+                data-bs-target="#modal-approve"
+                (click)="$event.stopPropagation()"
               >
                 Approve</button
               ><button
                 class="btn danger"
                 style="font-size: 11px; padding: 3px 9px"
-                onclick="
-                  openModal('modal-reject');
-                  event.stopPropagation();
-                "
+                data-bs-toggle="modal"
+                data-bs-target="#modal-reject"
+                (click)="$event.stopPropagation()"
               >
                 Reject
               </button>
@@ -1397,95 +1400,108 @@
 
 <!-- MODAL: Approve confirm -->
 
-<div class="modal-overlay" id="modal-approve">
-  <div class="modal">
-    <div class="modal-head">
-      <div class="modal-title">Confirm Approval</div>
-      <span class="modal-close" (click)="closeModal('modal-approve')"><i class="ti ti-x"></i></span>
-    </div>
-    <div class="modal-body">
-      <p style="font-size: 13px; color: var(--text2); line-height: 1.6">
-        You are about to approve
-        <strong style="color: var(--text1)">EXP-BAT-2024-0515-001</strong> for
-        <strong style="color: var(--text1)">₹18,742.60</strong> submitted by
-        <strong style="color: var(--text1)">Rahul Mehta</strong>. This will initiate reimbursement
-        via Bank Transfer.
-      </p>
-      <div
-        style="
-          margin-top: 12px;
-          background: var(--success-dim);
-          border: 1px solid rgba(16, 185, 129, 0.2);
-          border-radius: var(--radius);
-          padding: 10px 12px;
-        "
-      >
+<div
+  class="modal fade"
+  id="modal-approve"
+  tabindex="-1"
+  aria-labelledby="modalApproveLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="modalApproveLabel">Confirm Approval</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size: 13px; color: var(--text2); line-height: 1.6">
+          You are about to approve
+          <strong style="color: var(--text1)">EXP-BAT-2024-0515-001</strong> for
+          <strong style="color: var(--text1)">₹18,742.60</strong> submitted by
+          <strong style="color: var(--text1)">Rahul Mehta</strong>. This will initiate reimbursement
+          via Bank Transfer.
+        </p>
         <div
           style="
-            font-size: 11.5px;
-            color: var(--success);
-            display: flex;
-            align-items: center;
-            gap: 6px;
+            margin-top: 12px;
+            background: var(--success-dim);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: var(--radius);
+            padding: 10px 12px;
           "
         >
-          <i class="ti ti-shield-check"></i> All 6 policy checks passed · Low risk · AI confidence
-          95%
+          <div
+            style="
+              font-size: 11.5px;
+              color: var(--success);
+              display: flex;
+              align-items: center;
+              gap: 6px;
+            "
+          >
+            <i class="ti ti-shield-check"></i> All 6 policy checks passed · Low risk · AI confidence
+            95%
+          </div>
         </div>
       </div>
-    </div>
-    <div class="modal-foot">
-      <button class="btn" (click)="closeModal('modal-approve')">Cancel</button>
-      <button
-        class="btn primary"
-        (click)="
-          closeModal('modal-approve');
-          showToast('Expense approved &amp; sent for processing', 'success')
-        "
-      >
-        Confirm Approval
-      </button>
+      <div class="modal-footer">
+        <button class="btn" data-bs-dismiss="modal">Cancel</button>
+        <button
+          class="btn primary"
+          data-bs-dismiss="modal"
+          (click)="showToast('Expense approved &amp; sent for processing', 'success')"
+        >
+          Confirm Approval
+        </button>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- MODAL: Reject -->
-<div class="modal-overlay" id="modal-reject">
-  <div class="modal">
-    <div class="modal-head">
-      <div class="modal-title">Reject Expense</div>
-      <span class="modal-close" (click)="closeModal('modal-reject')"><i class="ti ti-x"></i></span>
-    </div>
-    <div class="modal-body">
-      <div class="form-field">
-        <label>Reason for rejection</label>
-        <select class="form-input">
-          <option>Missing receipts / documentation</option>
-          <option>Exceeds policy limits</option>
-          <option>Non-business expense</option>
-          <option>Duplicate submission</option>
-          <option>Other</option>
-        </select>
+<div
+  class="modal fade"
+  id="modal-reject"
+  tabindex="-1"
+  aria-labelledby="modalRejectLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="modalRejectLabel">Reject Expense</div>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="form-field">
-        <label>Notes (optional)</label
-        ><textarea
-          class="form-input"
-          rows="3"
-          placeholder="Add notes for the employee..."
-        ></textarea>
+      <div class="modal-body">
+        <div class="form-field">
+          <label>Reason for rejection</label>
+          <select class="form-input">
+            <option>Missing receipts / documentation</option>
+            <option>Exceeds policy limits</option>
+            <option>Non-business expense</option>
+            <option>Duplicate submission</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label>Notes (optional)</label
+          ><textarea
+            class="form-input"
+            rows="3"
+            placeholder="Add notes for the employee..."
+          ></textarea>
+        </div>
       </div>
-    </div>
-    <div class="modal-foot">
-      <button class="btn" onclick="closeModal('modal-reject')">Cancel</button>
-      <button
-        class="btn danger"
-        (click)="
-          closeModal('modal-reject'); showToast('Expense rejected & employee notified', 'danger')
-        "
-      >
-        Reject Expense
-      </button>
+      <div class="modal-footer">
+        <button class="btn" data-bs-dismiss="modal">Cancel</button>
+        <button
+          class="btn danger"
+          data-bs-dismiss="modal"
+          (click)="showToast('Expense rejected & employee notified', 'danger')"
+        >
+          Reject Expense
+        </button>
+      </div>
     </div>
   </div>
 </div>

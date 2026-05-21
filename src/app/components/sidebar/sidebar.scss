@@ -1,0 +1,161 @@
+@use 'sass:color';
+
+:host {
+  display: block;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 226px;
+  background: #171b26;
+  border-left: 1px solid rgba(92, 112, 255, 0.55);
+  border-right: 1px solid rgba(255, 255, 255, 0.045);
+  box-shadow: inset -1px 0 0 rgba(0, 0, 0, 0.18);
+}
+
+.logo {
+  min-height: 68px;
+  padding: 18px 18px 14px 17px;
+  border-bottom-color: rgba(255, 255, 255, 0.055);
+}
+
+.logo-mark {
+  width: 35px;
+  height: 35px;
+  border-radius: 9px;
+  background: linear-gradient(145deg, #5d78ff 0%, #4664f1 100%);
+  box-shadow: 0 10px 24px rgba(79, 110, 247, 0.25);
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.logo-copy {
+  min-width: 0;
+}
+
+.logo-text {
+  color: #f2f4ff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+}
+
+.logo-sub {
+  color: #59617b;
+  font-size: 10.5px;
+  line-height: 1.25;
+  margin-top: 1px;
+}
+
+.sidebar-toggle {
+  width: 27px;
+  height: 27px;
+  border-radius: 7px;
+  color: #8b94b8;
+  background: #1d2230;
+  border-color: rgba(255, 255, 255, 0.07);
+  box-shadow: inset 0 0 12px rgba(255, 255, 255, 0.015);
+}
+
+.nav {
+  padding: 12px 11px 10px 10px;
+}
+
+.nav-section {
+  padding: 14px 11px 9px;
+  color: #565e7a;
+  font-size: 9px;
+  font-weight: 700;
+}
+
+.nav-item {
+  min-height: 31px;
+  margin-bottom: 1px;
+  padding: 7px 10px 7px 12px;
+  border-radius: 6px;
+  color: #9aa4c4;
+  font-size: 12px;
+  font-weight: 500;
+
+  i {
+    color: #96a0c2;
+    font-size: 15.5px;
+  }
+
+  &:hover {
+    background: rgba(39, 48, 78, 0.55);
+    color: #d5dcff;
+
+    i {
+      color: #d5dcff;
+    }
+  }
+
+  &.active {
+    background: #242c56;
+    color: #6f82ff;
+    font-weight: 600;
+
+    i {
+      color: #6f82ff;
+    }
+
+    &::before {
+      left: -10px;
+      width: 3px;
+      height: 20px;
+      background: #5f75ff;
+      border-radius: 0 4px 4px 0;
+    }
+  }
+}
+
+.nav-badge {
+  min-width: 20px;
+  padding: 3px 5px;
+  background: #ff4759;
+  box-shadow: 0 2px 8px rgba(255, 71, 89, 0.32);
+  text-align: center;
+}
+
+.sidebar-footer {
+  min-height: 61px;
+  padding: 14px 14px 13px 16px;
+  border-top-color: rgba(255, 255, 255, 0.055);
+  background: rgba(20, 24, 35, 0.38);
+}
+
+.user-av {
+  width: 33px;
+  height: 33px;
+  color: #6276ff;
+  background: rgba(80, 98, 210, 0.1);
+  border-color: rgba(95, 117, 255, 0.9);
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.user-name {
+  color: #f0f3ff;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.user-role {
+  color: #59617b;
+  font-size: 10.5px;
+  line-height: 1.25;
+  margin-top: 2px;
+}
+
+:host-context(.app.sidebar-collapsed) {
+  .sidebar {
+    width: var(--sidebar-collapsed-w);
+  }
+
+  .logo {
+    min-height: auto;
+  }
+}
