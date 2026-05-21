@@ -67,9 +67,20 @@
           <div class="card-title">
             <span class="sec-num">1</span>Original Transaction &amp; Receipt
           </div>
-          <span class="status-pill success" style="font-size: 10.5px; padding: 2px 8px"
-            ><i class="ti ti-circle-check" style="font-size: 11px"></i>Verified</span
-          >
+          <div style="display: flex; align-items: center; gap: 8px">
+            <button
+              class="btn btn-zoom-expand"
+              data-bs-toggle="modal"
+              data-bs-target="#modal-receipt"
+              (click)="openReceiptModal()"
+              title="Expand receipt"
+            >
+              <i class="ti ti-maximize"></i>
+            </button>
+            <span class="status-pill success" style="font-size: 10.5px; padding: 2px 8px"
+              ><i class="ti ti-circle-check" style="font-size: 11px"></i>Verified</span
+            >
+          </div>
         </div>
         <div class="card-body">
           <div class="bank-row">
@@ -1501,6 +1512,196 @@
         >
           Reject Expense
         </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: Receipt Zoom -->
+<div
+  class="modal fade"
+  id="modal-receipt"
+  tabindex="-1"
+  aria-labelledby="modalReceiptLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content receipt-zoom-content">
+      <div class="modal-header receipt-zoom-header">
+        <div class="modal-title" id="modalReceiptLabel">
+          <i
+            class="ti ti-receipt"
+            style="font-size: 16px; margin-right: 6px; color: var(--accent)"
+          ></i>
+          Original Transaction &amp; Receipt
+        </div>
+        <div class="receipt-zoom-toolbar">
+          <button
+            class="zoom-btn"
+            (click)="zoomOut()"
+            [disabled]="receiptZoom <= receiptZoomMin"
+            title="Zoom Out"
+          >
+            <i class="ti ti-zoom-out"></i>
+          </button>
+          <span class="zoom-level">{{ receiptZoom }}%</span>
+          <button
+            class="zoom-btn"
+            (click)="zoomIn()"
+            [disabled]="receiptZoom >= receiptZoomMax"
+            title="Zoom In"
+          >
+            <i class="ti ti-zoom-in"></i>
+          </button>
+          <button class="zoom-btn" (click)="zoomReset()" title="Reset to 100%">
+            <i class="ti ti-restore"></i>
+          </button>
+          <button class="zoom-btn" (click)="zoomFit()" title="Fit to screen">
+            <i class="ti ti-arrows-maximize"></i>
+          </button>
+          <div class="zoom-divider"></div>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+      </div>
+      <div class="modal-body receipt-zoom-body">
+        <div class="receipt-zoom-canvas w-100" [style.transform]="getZoomTransform()">
+          <!-- Bank Transaction Row -->
+          <div class="bank-row" style="margin-bottom: 14px">
+            <div>
+              <div
+                style="
+                  font-size: 14px;
+                  font-weight: 600;
+                  display: flex;
+                  align-items: center;
+                  gap: 6px;
+                "
+              >
+                <i class="ti ti-building-bank" style="font-size: 16px"></i>HDFC Bank ●●●● 4421
+              </div>
+              <div style="font-size: 12px; color: var(--text3); margin-top: 3px">
+                14 May 2024 · 07:42 PM
+              </div>
+            </div>
+            <div style="font-size: 18px; font-weight: 600; font-family: var(--mono)">
+              ₹18,742.60
+            </div>
+          </div>
+          <!-- Invoice Box -->
+          <div class="inv-box" style="font-size: 12.5px">
+            <div
+              style="display: flex; justify-content: space-between; gap: 12px; margin-bottom: 14px"
+            >
+              <div>
+                <div class="inv-hotel" style="font-size: 16px">
+                  TAJ MG ROAD<br /><span style="font-size: 13px; font-weight: 400">BANGALORE</span>
+                </div>
+                <div class="inv-meta" style="margin-top: 8px; font-size: 12px">
+                  Indian Hotels Company Limited<br />No. 41/3, Mahatma Gandhi Road<br />Bangalore —
+                  560 001, India<br />GSTIN: 29AAAC0370Q1ZB
+                </div>
+              </div>
+              <div class="inv-meta" style="text-align: right; font-size: 12px">
+                Invoice No: BLR/24-25/48762<br />Date: 14 May 2024<br />Guest: Rahul Mehta<br />Room:
+                1803<br />Co: ABC Pvt. Ltd.
+              </div>
+            </div>
+            <div
+              style="
+                font-size: 11px;
+                color: var(--accent);
+                font-weight: 500;
+                text-transform: uppercase;
+                letter-spacing: 0.06em;
+                margin-bottom: 6px;
+              "
+            >
+              Tax Invoice
+            </div>
+            <table class="inv-table" style="font-size: 13px">
+              <tbody>
+                <tr>
+                  <th>Date</th>
+                  <th>Description</th>
+                  <th style="text-align: right">₹</th>
+                </tr>
+                <tr>
+                  <td>10 May</td>
+                  <td>Room Tariff</td>
+                  <td>6,500.00</td>
+                </tr>
+                <tr>
+                  <td>10 May</td>
+                  <td>Food &amp; Beverages</td>
+                  <td>2,450.00</td>
+                </tr>
+                <tr>
+                  <td>11 May</td>
+                  <td>Room Tariff</td>
+                  <td>6,500.00</td>
+                </tr>
+                <tr>
+                  <td>11 May</td>
+                  <td>Food &amp; Beverages</td>
+                  <td>2,230.00</td>
+                </tr>
+                <tr>
+                  <td>11 May</td>
+                  <td>Laundry</td>
+                  <td>320.00</td>
+                </tr>
+                <tr>
+                  <td>12 May</td>
+                  <td>Local Transport</td>
+                  <td>742.60</td>
+                </tr>
+              </tbody>
+            </table>
+            <div style="margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border)">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  font-size: 12.5px;
+                  color: var(--text3);
+                  padding: 3px 0;
+                "
+              >
+                <span>Subtotal</span><span style="font-family: var(--mono)">18,742.60</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  font-size: 12.5px;
+                  color: var(--text3);
+                  padding: 3px 0;
+                "
+              >
+                <span>IGST (12%)</span><span style="font-family: var(--mono)">1,998.72</span>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  font-size: 14px;
+                  font-weight: 600;
+                  margin-top: 6px;
+                  padding-top: 6px;
+                  border-top: 1px solid var(--border);
+                "
+              >
+                <span>Total</span
+                ><span style="font-family: var(--mono); color: var(--accent)">₹18,742.60</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
