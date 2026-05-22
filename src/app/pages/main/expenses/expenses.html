@@ -5,10 +5,10 @@
       <div class="page-title">Multiple Expenses in Single Transaction</div>
       <div class="page-sub">Travel — Multiple Days Expense Reimbursement</div>
     </div>
-    <button class="btn" (click)="showToast('Expense sent back to employee', 'info')">
+    <button class="btn primary" (click)="showToast('Expense sent back to employee', 'info')">
       Send Back
     </button>
-    <button class="btn" (click)="showToast('Info request sent to Rahul Mehta', 'info')">
+    <button class="btn primary" (click)="showToast('Info request sent to Rahul Mehta', 'info')">
       Request Info
     </button>
     <button class="btn danger" data-bs-toggle="modal" data-bs-target="#modal-reject">Reject</button>
@@ -1536,7 +1536,7 @@
           Original Transaction &amp; Receipt
         </div>
         <div class="receipt-zoom-toolbar">
-          <button
+          <!-- <button
             class="zoom-btn"
             (click)="zoomOut()"
             [disabled]="receiptZoom <= receiptZoomMin"
@@ -1559,7 +1559,7 @@
           <button class="zoom-btn" (click)="zoomFit()" title="Fit to screen">
             <i class="ti ti-arrows-maximize"></i>
           </button>
-          <div class="zoom-divider"></div>
+          <div class="zoom-divider"></div> -->
           <button
             type="button"
             class="btn-close"
